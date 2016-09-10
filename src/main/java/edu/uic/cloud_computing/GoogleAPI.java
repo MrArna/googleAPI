@@ -5,6 +5,7 @@ import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInsta
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -37,6 +38,16 @@ public class GoogleAPI {
 
     /** Global instance of the HTTP transport. */
     protected static HttpTransport HTTP_TRANSPORT;
+
+    static {
+        try {
+            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+        } catch (Throwable t) {
+            t.printStackTrace();
+            System.exit(1);
+        }
+    }
 
     /**
      * Creates an authorized Credential object.

@@ -15,16 +15,16 @@ public class SheetsQuickstart extends GoogleAPI {
     private static final String SERVICE = "SHEETS";
     protected static final List<String> SCOPES = (List<String>)Arrays.asList(SheetsScopes.SPREADSHEETS_READONLY);
 
-    static {
-        try {
-            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
-        }
-        catch (Throwable t) {
-            t.printStackTrace();
-            System.exit(1);
-        }
-    }
+//    static {
+//        try {
+//            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+//            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+//        }
+//        catch (Throwable t) {
+//            t.printStackTrace();
+//            System.exit(1);
+//        }
+//    }
 
     /**
      * Build and return an authorized Sheets API client service.
@@ -60,5 +60,9 @@ public class SheetsQuickstart extends GoogleAPI {
                 System.out.printf("%s, %s\n", row.get(0), row.get(4));
             }
         }
+
+
+
+
     }
 }
