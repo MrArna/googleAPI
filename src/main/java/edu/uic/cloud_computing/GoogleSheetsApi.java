@@ -1,6 +1,5 @@
 package edu.uic.cloud_computing;
 
-import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.SheetsScopes;
@@ -11,36 +10,40 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class SheetsQuickstart extends GoogleAPI {
-    private static final String SERVICE = "SHEETS";
-    protected static final List<String> SCOPES = (List<String>)Arrays.asList(SheetsScopes.SPREADSHEETS_READONLY);
+public class GoogleSheetsApi extends GoogleApi {
 
-//    static {
-//        try {
-//            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-//            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
-//        }
-//        catch (Throwable t) {
-//            t.printStackTrace();
-//            System.exit(1);
-//        }
-//    }
 
-    /**
-     * Build and return an authorized Sheets API client service.
-     * @return an authorized Sheets API client service
-     * @throws IOException
+    /** Application name. */
+    protected static final String APPLICATION_NAME =
+            "Google Sheets API Java Quickstart";
+
+    /** Directory to store user credentials for this application. */
+    protected static final java.io.File DATA_STORE_DIR = new java.io.File(
+            System.getProperty("user.home"), ".credentials/cs441.googleapi/sheets-service");
+
+
+    /** Global instance of the scopes required by this quickstart.
+     *
+     * If modifying these scopes, delete your previously saved credentials
+     * at ~/.credentials/cs441.googleapi.google-sheets-service
      */
-    public static Sheets getSheetsService() throws IOException {
-        Credential credential = authorize(SheetsQuickstart.SCOPES);
-        return new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
-                .setApplicationName(APPLICATION_NAME)
-                .build();
+    protected static final List<String> SCOPES =
+            (List<String>) Arrays.asList(SheetsScopes.SPREADSHEETS_READONLY);
+
+    static {
+        try {
+            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+        } catch (Throwable t) {
+            t.printStackTrace();
+            System.exit(1);
+        }
     }
+
 
     public static void main(String[] args) throws IOException {
         // Build a new authorized API client service.
-        Sheets service = getSheetsService();
+        Sheets service =  (Sheets)getService("SHEETS", GoogleSheetsApi.SCOPES, GoogleSheetsApi.DATA_STORE_DIR);
 
         // Prints the names and majors of students in a sample spreadsheet:
         // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
@@ -61,8 +64,6 @@ public class SheetsQuickstart extends GoogleAPI {
             }
         }
 
-
-
-
+        GmailApi.main(null);
     }
 }
