@@ -15,14 +15,12 @@ public class GmailLogger {
     public static void main(String[] args)
             throws IOException, InterruptedException, GeneralSecurityException{
         GoogleServices googleServices = new GoogleServices();
-        ConcurrencyLock lock = new ConcurrencyLock();
-
 
         SynchronizedListQueue<MessageContent> contentQueue = new SynchronizedListQueue<>();
         SynchronizedListQueue<Message> messageQueue = new SynchronizedListQueue<>();
 
         InboxListener inboxListener = new InboxListener( contentQueue, messageQueue, googleServices);
-        MessageToMimeLooper messageToMimeWorker = new MessageToMimeLooper(contentQueue, messageQueue, lock, googleServices);
+        MessageToMimeLooper messageToMimeWorker = new MessageToMimeLooper(contentQueue, messageQueue, googleServices);
         SheetWriter sheetWriter = new SheetWriter(contentQueue, googleServices);
 
         Thread worker1 = new Thread( inboxListener );

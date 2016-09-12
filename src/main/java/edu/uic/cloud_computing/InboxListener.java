@@ -56,9 +56,8 @@ public class InboxListener implements Runnable{
                                 .setPageToken(pageToken)
                                 .execute();
                     }
-                    else {
-                        break;
-                    }
+                    else break;
+
                 }
                 Thread.sleep(1000);
             }

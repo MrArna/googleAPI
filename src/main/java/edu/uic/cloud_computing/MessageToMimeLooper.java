@@ -18,7 +18,6 @@ public class MessageToMimeLooper implements Runnable {
 
     private SynchronizedListQueue<Message> messageQueue;
     private SynchronizedListQueue<MessageContent> contentQueue;
-    private ConcurrencyLock lock;
     private GoogleServices service;
     private boolean running = true;
 
@@ -28,11 +27,9 @@ public class MessageToMimeLooper implements Runnable {
 
     public MessageToMimeLooper(SynchronizedListQueue<MessageContent> contentQueue,
                                SynchronizedListQueue<Message> messageQueue,
-                               ConcurrencyLock lock,
                                GoogleServices service){
         this.messageQueue = messageQueue;
         this.contentQueue = contentQueue;
-        this.lock = lock;
         this.service = service;
     }
 
