@@ -5,10 +5,6 @@ import com.google.GoogleServicesApi.GoogleServices;
 import java.io.IOException;
 
 public class SheetWriter implements Runnable{
-    /** Application name. */
-    protected static final String APPLICATION_NAME =
-            "Google Sheets API Java Quickstart";
-
     private SynchronizedListQueue<MessageContent> contentQueue;
     private GoogleServices googleServices;
     private boolean running = true;

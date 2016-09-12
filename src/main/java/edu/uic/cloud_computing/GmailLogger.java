@@ -9,7 +9,9 @@ import java.security.GeneralSecurityException;
  * Created by gabe on 9/11/16.
  */
 public class GmailLogger {
-
+    /** Application name. */
+    public static final String APPLICATION_NAME =
+            "Google Sheets API Java Quickstart";
     public static void main(String[] args)
             throws IOException, InterruptedException, GeneralSecurityException{
         GoogleServices googleServices = new GoogleServices();

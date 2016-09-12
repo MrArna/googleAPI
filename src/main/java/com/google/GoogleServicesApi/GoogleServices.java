@@ -14,6 +14,7 @@ import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.GmailScopes;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
+import edu.uic.cloud_computing.GmailLogger;
 import edu.uic.cloud_computing.InboxListener;
 
 import java.io.File;
@@ -109,8 +110,9 @@ public class GoogleServices {
     private void setGmailervice(File DATA_STORE_DIR) throws IOException, GeneralSecurityException{
         GMAIL_DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
         authorize(GMAIL_SCOPES, DATA_STORE_DIR, GMAIL_DATA_STORE_FACTORY);
+
         gmailService =  new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
-                .setApplicationName(InboxListener.APPLICATION_NAME)
+                .setApplicationName(GmailLogger.APPLICATION_NAME)
                 .build();
     }
 
@@ -122,8 +124,9 @@ public class GoogleServices {
     private void setSheetService(File DATA_STORE_DIR) throws IOException, GeneralSecurityException{
         SHEETS_DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
         authorize(SHEETS_SCOPES, DATA_STORE_DIR, SHEETS_DATA_STORE_FACTORY);
+
         sheetsService = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
-                .setApplicationName(InboxListener.APPLICATION_NAME)
+                .setApplicationName(GmailLogger.APPLICATION_NAME)
                 .build();
     }
 
