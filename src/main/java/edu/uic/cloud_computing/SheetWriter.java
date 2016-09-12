@@ -19,7 +19,6 @@ public class SheetWriter implements Runnable{
         this.googleServices = googleServices;
     }
 
-
     public void terminate(){
         running = false;
     }
@@ -42,29 +41,4 @@ public class SheetWriter implements Runnable{
 
 
     }
-
-//    public void main(String[] args) throws IOException {
-//        // Build a new authorized API client service.
-//        Sheets service =  getService(SheetWriter.SCOPES, SheetWriter.DATA_STORE_DIR);
-//
-//        // Prints the names and majors of students in a sample spreadsheet:
-//        // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-//        String spreadsheetId = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
-//
-//        String range = "Class Data!A2:E";
-//        ValueRange response = service.spreadsheets().values()
-//                .get(spreadsheetId, range)
-//                .execute();
-//        List<List<Object>> values = response.getValues();
-//        if (values == null || values.size() == 0) {
-//            System.out.println("No data found.");
-//        } else {
-//            System.out.println("Name, Major");
-//            for (List row : values) {
-//                // Print columns A and E, which correspond to indices 0 and 4.
-//                System.out.printf("%s, %s\n", row.get(0), row.get(4));
-//            }
-//        }
-//
-//    }
 }

@@ -10,7 +10,6 @@ import java.security.GeneralSecurityException;
  */
 public class GmailLogger {
 
-
     public static void main(String[] args)
             throws IOException, InterruptedException, GeneralSecurityException{
         GoogleServices googleServices = new GoogleServices();
@@ -33,10 +32,14 @@ public class GmailLogger {
         worker3.start();
 
         Thread.sleep(10000);
-        
+
         inboxListener.terminate();
         messageToMimeWorker.terminate();
         sheetWriter.terminate();
+
+        worker1.join();
+        worker2.join();
+        worker3.join();
 
     }
 
