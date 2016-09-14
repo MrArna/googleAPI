@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hw1.iml" filepath="$PROJECT_DIR$/.idea/modules/hw1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hw1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hw1_main.iml" group="hw1" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hw1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hw1_test.iml" group="hw1" />
-      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
     </modules>
   </component>
 </project>
