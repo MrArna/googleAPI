@@ -10,6 +10,7 @@ Development & Design choices
 -----------------
 The application was developed with IntelliJ. It has been designed in order to be as extendable as possible.
 In detail, it's composed by 3 classes:
+
 + **Main**: this is the the core of the application, where the other classes are instantiated and used
 + **HalsteadVisitor**: this class extends the ASTVisitor class, in this way its possible to exploit polymorphism and use this custom class during the parsing by compilation unit. This class is in charge to visit the project structure, retrieve the files, parse them and count operands and operators. In order to achieve this last functionality several overloading versions of the method visit are provided. Each of those it's called when the AST node of the respective type is visited 
 + *HalsteadComplexity*: this class implements and provide all the measures being part of the Halstead Complexity 
