@@ -25,6 +25,8 @@ Usage
 
 Test
 ----------------
+All the tests were made automated by using JUnit. In particular a test suite for each of the *HalsteadComplexity* and the "HalsteadVisitor" class were made. Each methods of both of them was tested except for the visitor methods since they were already safe.
+
 
 Acknowledgments
 ---------------
