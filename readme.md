@@ -16,3 +16,15 @@ In detail, it's composed by 3 classes:
 + **HalsteadComplexity**: this class implements and provide all the measures being part of the Halstead Complexity 
 
 Further information about the methods and their behaviors can be found in the comment inside the code.
+
+Behaviour
+----------------
+
+Usage
+----------------
+
+Test
+----------------
+
+Acknowledgments
+---------------
