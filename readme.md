@@ -40,7 +40,7 @@ Usage
 
 To use the application open the terminal and type as the following snippet of code, from the folder where the executable is located:
 
-`java HW1_MarcoArnaboldi`
+`java -jar `
 
 Press any key to stop it.
 
