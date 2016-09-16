@@ -1,4 +1,5 @@
-package service; /**
+package service;
+/**
  * Created by Marco on 09/09/16.
  */
 import com.google.api.client.auth.oauth2.Credential;
@@ -26,7 +27,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MailService {
-    //private static final String APPLICATION_NAME = "Mail watchdog";
 
     //Location where to save credential given by Google at first access
     private  final File DATA_STORE_DIR = new File(System.getProperty("user.home"), ".credentials/mail.googleapis");
@@ -39,14 +39,6 @@ public class MailService {
     private Gmail service;
 
     private final  String user = "marco.arnaboldi91@gmail.com";
-
-    public BigInteger getOldHistoryId() {
-        return oldHistoryId;
-    }
-
-    public void setOldHistoryId(BigInteger oldHistoryId) {
-        this.oldHistoryId = oldHistoryId;
-    }
 
     private BigInteger oldHistoryId;
 
@@ -190,5 +182,13 @@ public class MailService {
         }
         oldHistoryId = historyId;
         return  mails;
+    }
+
+    public BigInteger getOldHistoryId() {
+        return oldHistoryId;
+    }
+
+    public void setOldHistoryId(BigInteger oldHistoryId) {
+        this.oldHistoryId = oldHistoryId;
     }
 }
