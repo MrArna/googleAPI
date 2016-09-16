@@ -57,7 +57,7 @@ Steps for the test:
 To check the results the credential to access the accounts are:
 
 Google Account: marco.arnaboldi91@gmail.com
-Password: 
+Password: hh7-JAL-mJX-wBB
 
 Acknowledgments
 ---------------
