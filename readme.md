@@ -46,7 +46,11 @@ Press any key to stop it.
 
 Test
 ----------------
-The testing was made using a python script that sends mail to the defined mail account. Usage of the scripts is the following:
+The testing was made using a python script that sends mail to the defined mail account. Usage of the scripts is the following, from terminal:
+
+`python sendMail.py [-t <toaddr>] [-s <subject>] [-b <body>]`
+
+If not specified, the parameters will assume the default values
 
 Steps for the test:
 
@@ -54,10 +58,13 @@ Steps for the test:
 1. Send a mail to the account using the python script
 1. Check if the mail was added to the current spreadsheet
 
-To check the results the credential to access the accounts are:
+To check the result the credential to access the accounts are:
 
-Google Account: marco.arnaboldi91@gmail.com
-Password: hh7-JAL-mJX-wBB
+| Property       | Value                         |
+| ------------- | ----------------------------- |
+| Google Account| marco.arnaboldi91@gmail.com   |
+| Password      | hh7-JAL-mJX-wBB               |
+
 
 Acknowledgments
 ---------------
