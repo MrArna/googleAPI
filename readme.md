@@ -42,6 +42,8 @@ To use the application open the terminal and type as the following snippet of co
 
 `java HW1_MarcoArnaboldi`
 
+Press any key to stop it.
+
 Test
 ----------------
 The testing was made using a python script that sends mail to the defined mail account. Usage of the scripts is the following:
