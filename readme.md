@@ -33,24 +33,35 @@ Further information about classes and their methods can be find as comment into 
 Functionalities
 ----------------
 
-The application run into a client (e.g. your personal computer). At its start the application, if not exists, creates a file named with the current date DDMMYYYY, then fill it with the unread mails till the current day. After that if a new mail incomes, the application appends its information to the file.
+The application run into a client (e.g. your personal computer). At its start the application, if not exists, creates a file named with the current date DDMMYYYY, then fill it with the unread mails till the current day. After that if a new mail incomes, the application appends its information to the file. There's no checking if an unread message was already appended, so duplication is allowed in the spreadsheet.
 
 Usage
 ----------------
 
 To use the application open the terminal and type as the following snippet of code, from the folder where the executable is located:
 
-`java -jar `
+`java -jar hw1-1.0.jar`
 
 Press any key to stop it.
+At the very first run the application will open a dialog in the browser asking to allow it to access with the specified privileges to the marco.arnaboldi91@gmail.com account. You need to provide those privileges being logged in Google as the account above. See the "Test" to find out the credential needed to access with that account.
 
 Test
 ----------------
+###### JUnit
+Automated tests with JUnit were made for the services. To run them an internet connection is needed.
+The services tested are:
+
++ **Drive**: creates a Test spreadsheet and deletes it
++ **GMail**: reads the unread mails
++ **Spreadsheet**: opens the Test file and append into it some values
+
+
+###### Other tests
 The testing was made using a python script that sends mail to the defined mail account. Usage of the scripts is the following, from terminal:
 
 `python sendMail.py [-t <toaddr>] [-s <subject>] [-b <body>]`
 
-If not specified, the parameters will assume the default values
+If not specified, the parameters will assume the default values. The mail will be send out via the Gmail account specified later. If you want to change the sender, edit the script with your own sender and its password.
 
 Steps for the test:
 
