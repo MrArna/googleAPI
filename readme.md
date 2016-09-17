@@ -47,6 +47,8 @@ At the very first run the application will open a dialog in the browser asking t
 
 Test
 ----------------
+The tests and the application were developed in a OS X environment.
+
 ##### JUnit
 Automated tests with JUnit were made for the services. To run them an internet connection is needed.
 The services tested are:
