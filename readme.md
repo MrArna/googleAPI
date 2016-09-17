@@ -47,7 +47,7 @@ At the very first run the application will open a dialog in the browser asking t
 
 Test
 ----------------
-###### JUnit
+##### JUnit
 Automated tests with JUnit were made for the services. To run them an internet connection is needed.
 The services tested are:
 
@@ -56,7 +56,7 @@ The services tested are:
 + **Spreadsheet**: opens the Test file and append into it some values
 
 
-###### Other tests
+##### Other tests
 The testing was made using a python script that sends mail to the defined mail account. Usage of the scripts is the following, from terminal:
 
 `python sendMail.py [-t <toaddr>] [-s <subject>] [-b <body>]`
@@ -69,7 +69,7 @@ Steps for the test:
 1. Send a mail to the account using the python script
 1. Check if the mail was added to the current spreadsheet
 
-To check the result the credential to access the accounts are:
+To check the result the credential to access the accounts are (please don't change any account settings):
 
 | Property       | Value                         |
 | ------------- | ----------------------------- |
