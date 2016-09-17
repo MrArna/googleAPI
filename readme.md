@@ -43,7 +43,7 @@ To use the application open the terminal and type as the following snippet of co
 `java -jar hw1-1.0.jar`
 
 Press any key to stop it.
-At the very first run the application will open a dialog in the browser asking to allow it to access with the specified privileges to the marco.arnaboldi91@gmail.com account. You need to provide those privileges being logged in Google as the account above. See the "Test" to find out the credential needed to access with that account.
+At the very first run the application will open a dialog in the browser asking to allow it to access with the specified privileges to the marco.arnaboldi91@gmail.com account. You need to provide those privileges being logged in Google as the account above. See the "Test" section to find out the credential needed to access with that account.
 
 Test
 ----------------
