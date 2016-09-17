@@ -18,6 +18,7 @@ import com.google.api.services.drive.model.FileList;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
@@ -137,5 +138,30 @@ public class DriveService
                 .execute();
         System.out.println("Spreadsheet created with id: " + file.getId());
         return  file.getId();
+    }
+
+    public void deleteSpreadsheet(String name) throws IOException {
+        List<File> spreads = getSpreadSheetsBy(10);
+        String fileID = "null";
+        if (spreads == null || spreads.size() == 0)
+        {
+            System.out.println("No files found.");
+        }
+        else
+        {
+            for (File file : spreads)
+            {
+                if(file.getName().equals(name))
+                {
+                    fileID = file.getId();
+                    System.out.println("File found.");
+                    break;
+                }
+            }
+        }
+        if (!fileID.equals("null"))
+        {
+            service.files().delete(fileID);
+        }
     }
 }

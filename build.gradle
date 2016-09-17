@@ -8,11 +8,23 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 version = '1.0'
 
+
+jar {
+    manifest {
+        attributes 'Main-Class':'MailWatchdogApplication'
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}
+
+
 repositories {
     mavenCentral()
 }
 
-dependencies {
+dependencies{
     compile 'com.google.api-client:google-api-client:1.22.0'
     compile 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
     compile 'com.google.apis:google-api-services-gmail:v1-rev48-1.22.0'
