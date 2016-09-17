@@ -29,6 +29,8 @@ public class PubSubService {
                 // MaxEvents, or until the timeout.
                 .setReturnImmediately(true)
                 .setMaxMessages(batchSize);
+
+        //pull the subscription for new publication, if there're some call the mail parsing service
         do {
             PullResponse pullResponse = pubsub.projects().subscriptions()
                     .pull(subscriptionName, pullRequest).execute();
@@ -54,12 +56,12 @@ public class PubSubService {
                 spreadsheetService.appenRows(gmailService.getNewMailByHistory(userId,historyId));
                 ackIds.add(receivedMessage.getAckId());
             }
-            // Ack can be done asynchronously if you care about throughput.
+            // Ack can be done asynchronously if you care about throughput. MUST done.
             AcknowledgeRequest ackRequest =
                     new AcknowledgeRequest().setAckIds(ackIds);
             pubsub.projects().subscriptions()
                     .acknowledge(subscriptionName, ackRequest).execute();
-            // You can keep pulling messages by changing the condition below.
+            // Keep pulling till a key is pressed
         } while (System.in.available() == 0);
     }
 

@@ -29,23 +29,6 @@ public class MailWatchdogApplication
 
     public static void main(String[] args) throws IOException, ParseException
     {
-
-
-        /*String content = "{message:{data:\"eyJlbWFpbEFkZHJlc3MiOiAidXNlckBleGFtcGxlLmNvbSIsICJoaXN0b3J5SWQiOiAiMTIzNDU2Nzg5MCJ9\",message_id: \"1234567890\"}, subscription: \"projects/myproject/subscriptions/mysubscription\"}";
-
-        JSONObject jsonObjParent = new JSONObject(content);
-        System.out.println(jsonObjParent.keySet().toString());
-
-        JSONObject jsonObj = jsonObjParent.getJSONObject("message");
-
-
-
-        JSONObject data = new JSONObject(new String(Base64.decodeBase64(jsonObj.getString("data").getBytes()), StandardCharsets.UTF_8));
-
-        System.out.println(data.toString());
-        */
-
-
         //Service initialization
         serviceInitialization();
 

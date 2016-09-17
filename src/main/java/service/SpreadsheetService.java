@@ -116,7 +116,7 @@ public class SpreadsheetService
                 .build();
     }
 
-
+    //creates the header for the given file
     public void decorateSheet(String id) throws IOException
     {
         System.out.println("Setting up the spreadsheet");
@@ -140,6 +140,7 @@ public class SpreadsheetService
         lastFileId = id;
     }
 
+    //appends row to the given file
     public void appenRows(String fileId, List<String> rows) throws IOException
     {
         System.out.println("Appending new rows...");
@@ -167,6 +168,7 @@ public class SpreadsheetService
         lastFileId = fileId;
     }
 
+    //overload of the previous method
     public void appenRows(List<String> rows) throws IOException
     {
         appenRows(lastFileId, rows);

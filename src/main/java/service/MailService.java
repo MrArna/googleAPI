@@ -124,6 +124,8 @@ public class MailService {
         return  mails;
     }
 
+
+    //start a subscription to a  topic for the gmail service, like saying that I'm a listener
     public void startWatcher() throws IOException
     {
         WatchRequest request = new WatchRequest();
@@ -135,6 +137,7 @@ public class MailService {
         oldHistoryId = response.getHistoryId();
     }
 
+    // given a history, retvies all the unread mail in that history
     public List<String > getNewMailByHistory(String userId,BigInteger historyId) throws IOException, ParseException {
         Message message;
         String subject = null;

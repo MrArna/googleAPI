@@ -127,6 +127,7 @@ public class DriveService
         return files;
     }
 
+    //create a spreadshhet with the given name
     public String createSpreadsheet(String name) throws IOException
     {
         System.out.println("Creating new spreadsheet...");
@@ -140,6 +141,7 @@ public class DriveService
         return  file.getId();
     }
 
+    //delete the spreadsheet of the given name
     public void deleteSpreadsheet(String name) throws IOException {
         List<File> spreads = getSpreadSheetsBy(10);
         String fileID = "null";
